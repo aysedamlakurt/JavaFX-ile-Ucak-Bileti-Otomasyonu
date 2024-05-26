@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Yonetici_Sayfasi">
+   <children>
+      <TabPane layoutX="-1.0" layoutY="-2.0" prefHeight="500.0" prefWidth="850.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Uçuş Seferi Ekle">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="49.0" layoutY="48.0" text="Nereden">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="49.0" layoutY="102.0" text="Nereye">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <DatePicker fx:id="datebox" layoutX="142.0" layoutY="161.0" />
+                        <Label layoutX="38.0" layoutY="160.0" text="Sefer Tarihi">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="departtimetxt" layoutX="143.0" layoutY="223.0" />
+                        <Label layoutX="33.0" layoutY="222.0" text="Kalkış Saati">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="301.0" layoutY="227.0" text="(SS:dd formatında giriniz.)" />
+                        <Label layoutX="42.0" layoutY="279.0" text="İniş Saati">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="desttimetxt" layoutX="144.0" layoutY="280.0" />
+                        <Label layoutX="301.0" layoutY="284.0" text="(SS:dd formatında giriniz.)" />
+                        <Button fx:id="eklebuton" layoutX="229.0" layoutY="362.0" mnemonicParsing="false" onAction="#eklebuton_clck" text="Seferi Ekle">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="departtxt" layoutX="143.0" layoutY="49.0" />
+                        <TextField fx:id="desttxt" layoutX="145.0" layoutY="103.0" />
+                        <Button fx:id="eklecikisbuton" layoutX="256.0" layoutY="416.0" mnemonicParsing="false" onAction="#eklecikisbuton_clck" text="Çıkış" />
+                        <TextField fx:id="fiyattxt" layoutX="414.0" layoutY="75.0" />
+                        <Label layoutX="342.0" layoutY="74.0" text="Fiyat ">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Uçuş Seferi Sil">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="siltableview" editable="true" layoutX="57.0" layoutY="29.0" onMouseClicked="#siltableview_mouseclck" prefHeight="200.0" prefWidth="453.0">
+                          <columns>
+                            <TableColumn fx:id="col1_ucusno" prefWidth="75.0" text="Uçuş No." />
+                            <TableColumn fx:id="col1_depart" prefWidth="75.0" text="Kalkış Yeri" />
+                              <TableColumn fx:id="col1_dest" prefWidth="75.0" text="İniş Yeri" />
+                              <TableColumn fx:id="col1_date" prefWidth="75.0" text="Tarih" />
+                              <TableColumn fx:id="col1_kalktime" prefWidth="75.0" text="Kalkış Saati" />
+                              <TableColumn fx:id="col1_intime" prefWidth="75.0" text="İniş Saati" />
+                          </columns>
+                        </TableView>
+                        <TextField fx:id="ucusnotxt" layoutX="57.0" layoutY="262.0" />
+                        <TextField fx:id="kalkistxt" layoutX="57.0" layoutY="328.0" />
+                        <TextField fx:id="inistxt" layoutX="57.0" layoutY="386.0" />
+                        <DatePicker fx:id="sildatebox" layoutX="265.0" layoutY="262.0" />
+                        <TextField fx:id="kalkissaat_txt" layoutX="265.0" layoutY="328.0" />
+                        <TextField fx:id="inissaat_txt" layoutX="265.0" layoutY="386.0" />
+                        <Button fx:id="silbuton" layoutX="582.0" layoutY="308.0" mnemonicParsing="false" onAction="#silbuton_clck" text="Seferi Sil">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="57.0" layoutY="236.0" text="Uçuş Numarası">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="57.0" layoutY="359.0" text="İniş Yeri">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="266.0" layoutY="236.0" text="Sefer Tarihi">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="262.0" layoutY="300.0" text="Kalkış Saati">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="57.0" layoutY="300.0" text="Kalkış Yeri">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="266.0" layoutY="359.0" text="İniş Saati">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="silcikisbuton" layoutX="608.0" layoutY="373.0" mnemonicParsing="false" onAction="#silcikisbuton_clck" text="Çıkış" />
+                        <TextField fx:id="sorkalktxt" layoutX="628.0" layoutY="61.0" />
+                        <TextField fx:id="sorintext" layoutX="629.0" layoutY="104.0" />
+                        <Label layoutX="542.0" layoutY="60.0" text="Kalkış Yeri">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="542.0" layoutY="103.0" text="İniş Yeri">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="sorgula_buton" layoutX="629.0" layoutY="156.0" mnemonicParsing="false" onAction="#sorgula_butonclck" text="Sorgula">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Üyeler ve Uçuş Bilgileri">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableview_musteri" layoutX="66.0" layoutY="27.0" onMouseClicked="#tableviewmusteri_mouseclck" prefHeight="200.0" prefWidth="530.0">
+                          <columns>
+                            <TableColumn fx:id="col2_username" prefWidth="80.0000228881836" text="Kullanıcı Adı" />
+                            <TableColumn fx:id="col2_depart" prefWidth="70.39996337890625" text="Nereden " />
+                              <TableColumn fx:id="col2_dest" text="Nereye" />
+                              <TableColumn fx:id="col2_tarih" prefWidth="75.0" text="Tarih" />
+                              <TableColumn fx:id="col2_departtime" prefWidth="75.0" text="Kalkış Saati" />
+                              <TableColumn fx:id="col2_desttime" prefWidth="75.0" text="İniş Saati" />
+                              <TableColumn fx:id="col2_paket" prefWidth="75.0" text="Paket" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="userucusbuton" layoutX="200.0" layoutY="318.0" mnemonicParsing="false" onAction="#userucusbuton_clck" text="Seçilen müşterinin uçuşunu sil">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="soncikisbuton" layoutX="311.0" layoutY="369.0" mnemonicParsing="false" onAction="#soncikisbuton_clck" text="Çıkış" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Yemek Ekle">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="yemekturtxt" layoutX="221.0" layoutY="70.0" />
+                        <TextField fx:id="yemekadtxt" layoutX="221.0" layoutY="125.0" />
+                        <Label layoutX="115.0" layoutY="74.0" text="Yemek Türü">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="115.0" layoutY="125.0" text="Yemek Adı">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="yemekeklebuton" layoutX="248.0" layoutY="223.0" mnemonicParsing="false" onAction="#yemekeklebuton_clck" text="Yemek Ekle">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="yemekfiyattxt" layoutX="222.0" layoutY="171.0" />
+                        <Label layoutX="120.0" layoutY="170.0" text="Fiyat">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="yemekcikisbuton" layoutX="285.0" layoutY="276.0" mnemonicParsing="false" onAction="#yemekcikisbuton_clck" text="Çıkış" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

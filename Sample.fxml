@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
+   <children>
+      <Pane fx:id="pane1" prefHeight="500.0" prefWidth="400.0">
+         <children>
+            <Label fx:id="lbl2" layoutX="71.0" layoutY="346.0" prefHeight="29.0" prefWidth="289.0" text="FLYING IS A PASSION...">
+               <font>
+                  <Font name="Serif Regular" size="26.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="img1" fitHeight="200.0" fitWidth="250.0" layoutX="86.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@plane1.jpg" />
+               </image>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+            </ImageView>
+         </children>
+      </Pane>
+      <TextField fx:id="txt1" layoutX="542.0" layoutY="141.0" promptText="Kullanıcı Adı" />
+      <TextField fx:id="txt2" layoutX="542.0" layoutY="188.0" promptText="Şifre" />
+      <Button fx:id="btn1" layoutX="597.0" layoutY="266.0" mnemonicParsing="false" onAction="#btn1_clck" text="Giriş" />
+      <Label fx:id="lbl1" layoutX="555.0" layoutY="79.0" text="Giriş Yap">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+      <Hyperlink fx:id="hyplnk3" layoutX="565.0" layoutY="373.0" onAction="#hyplnk3_clck" text="Üye değil misiniz?" />
+   </children>
+</AnchorPane>
